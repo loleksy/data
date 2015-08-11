@@ -6,8 +6,8 @@
 
 Set of classes for holding data (entity, collection)
 
-* Entity Is extension of PHP stdClass
-* Collection extends PHP ArrayIterator funtionallity
+* [Entity](docs/Entity.md) Is extension of PHP stdClass
+* [Collection](docs/Collection.md) extends PHP ArrayIterator funtionallity
 
 ## Installation
 

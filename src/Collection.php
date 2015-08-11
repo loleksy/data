@@ -6,8 +6,20 @@ use InvalidArgumentException;
 use RuntimeException;
 use OutOfBoundsException;
 
+/**
+ * Extends ArrayIterator functionallity
+ *
+ * For all not documented methods please check http://php.net/manual/pl/class.arrayiterator.php
+ */
 class Collection extends \ArrayIterator
 {
+    /**
+     * Constructs Collection object
+     *
+     * @param mixed $data data
+     *
+     * @return void
+     */
     public function __construct($data = null)
     {
         parent::__construct([]);
@@ -69,6 +81,14 @@ class Collection extends \ArrayIterator
         return $this;
     }
 
+    /**
+     * Proxy all calls to entity when Collection has only one element
+     *
+     * @param string $name name
+     * @param array $args args
+     *
+     * @return mixed
+     */
     public function __call($name, $args)
     {
         switch ($this->count()) {
